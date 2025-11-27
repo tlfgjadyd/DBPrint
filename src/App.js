@@ -15,7 +15,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const backendUrl = "http://localhost:5000"; // 백엔드 서버 주소
+  const backendUrl = 'https://dbprint.onrender.com'; // 배포된 백엔드 서버 주소
 
   // 컴포넌트 마운트 시 테이블 목록 가져오기
   useEffect(() => {
