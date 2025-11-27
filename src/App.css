@@ -1,38 +1,121 @@
+/* Basic App-wide styling */
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  color: #333;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-main {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+  background-color: #f8f9fa;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Error message styling */
+.error {
+  color: #e74c3c;
+  padding: 10px;
+  border: 1px solid #e74c3c;
+  border-radius: 4px;
+  margin: 10px;
+  background-color: #fbeae5;
+}
+
+/* Left side - Table List */
+.table-list-container {
+  flex: 0 0 250px;
+  border-right: 1px solid #ddd;
+  padding: 10px;
+  overflow-y: auto;
+  text-align: left;
+  background-color: #fff;
+}
+
+.table-list-container h2 {
+  padding-left: 15px;
+}
+
+.table-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.table-list li {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  transition: background-color 0.2s;
+}
+
+.table-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.table-list li.selected {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+/* Right side - Table Data */
+.table-data-container {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.table-wrapper {
+  overflow: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  max-height: calc(100vh - 200px); /* Adjust height based on your layout */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+thead th {
+  background-color: #e9ecef;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Remove CRA boilerplate logo animation and other styles */
+.App-logo {
+  display: none;
+}
+.App-link {
+  color: #61dafb;
 }
